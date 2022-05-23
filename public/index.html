@@ -1,0 +1,178 @@
+<html>
+
+<head>
+  <title>Lotr</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+  <h1>Lord of The Rings</h1>
+  <h3>Proyecto CRUD con mongoDB</h3>
+
+  <p>Funciones implementadas</p>
+  <ul>
+    <li>Crear Razas y Personajes</li>
+    <li>Elegir la raza de cada personaje</li>
+    <li>Llamar a las razas y personajes por: Nombre, ID o todos </li>
+    <li>Editar Razas y/o Personajes</li>
+    <li>Eliminar Razas y/o Personajes</li>
+  </ul>
+
+  <h3>Instrucciones</h3>
+  <p>Conexión a la base de datos:</p>
+
+  <p>
+    Archivo .env:
+    <br>
+    <code>
+      PORT = 8080
+      <br>
+      MONGO_CNN = mongodb+srv://{User}:{Pass}@{Cluster}.qxknx.mongodb.net/lotr
+    </code>
+
+  <p>Ejemplos flags:</p>
+  <ul>
+    <p style="text-decoration: underline; ">Razas:</p>
+    <li>
+      Crear Raza:
+      <br>
+      <code>
+        POST http://localhost:8080/race/create
+        <br>
+         body: {
+          "name": "Elves",
+          "origins": "Created by Iluvatar, being first of his Children",
+          "languages": ["Quenya", "Sindarin"],
+          "lifespan": "Immortal",
+          "height": "Taller than average height of Mankid",
+          "skinColor": ["Pale complexion"],
+          "hairColor": ["Black", "Silver", "Gold", "Blonde"],
+          "weaponry": ["Swords", "Bows"]
+        } 
+      </code>
+    </li>
+    <br>
+    <li>
+      Llamar Razas:
+      <br>
+      <code>
+        GET http://localhost:8080/races
+    </li>
+    <br>
+    <li>
+      Llamar Raza por nombre:
+      <br>
+      <code>
+        GET http://localhost:8080/races?name={name}
+      </code>
+    </li>
+    <br>
+    <li>
+      Llamar Raza por id:
+      <br>
+      <code>
+        GET http://localhost:8080/race/{ID}
+      </code>
+    </li>
+    <br>
+    <li>
+      Editar Raza:
+      <br>
+      <code>
+        PUT http://localhost:8080/race/update/{ID}
+        <br>
+        body: {
+          "name": "Men",
+          "origins": "Created by Iluvatar, bear the Gift of Men, which is mortality",
+          "languages": ["Westron", "dunaic", "Rohirric", "Dalish", "Black Speech"],
+          "lifespan": "80-500 based in their culture",
+          "height": "Taller than average height of Mankid",
+          "skinColor": ["variable based in their culture"],
+          "hairColor": ["Black", "Silver", "Gold", "Blonde", "Brown"],
+          "weaponry": ["Swords", "Bows", "Axes", "Polearms", "Spears", "Maces", "Daggers", "Whips", "Hammers", "Flails", "Sling"]
+      }
+      </code>
+    </li>
+    <br>
+    <li>
+      Eliminar Raza:
+      <br>
+      <code>
+        DELETE http://localhost:8080/race/delete/{ID}
+      </code>
+    </li>
+  </ul>
+
+  <br>
+
+  <ul>
+    <p style="text-decoration: underline; ">Personajes:</p>
+    <li>
+      Crear Personaje:
+      <br>
+      <code>
+        POST http://localhost:8080/character/create
+        <br>
+         body: {
+          "name": "Glorfindel",
+          "titles": ["Lord of the Golden Flower"],
+          "birth": "Possibly Year of Trees",
+          "death": "First Age 510",
+          "hair": "Golden",
+          "race": "Elves"
+        } 
+      </code>
+    </li>
+    <br>
+    <li>
+      Llamar Personajes:
+      <br>
+      <code>
+        GET http://localhost:8080/characters
+    </li>
+    <br>
+    <li>
+      Llamar Personaje por nombre:
+      <br>
+      <code>
+        GET http://localhost:8080/characters?name={name}
+      </code>
+    </li>
+    <br>
+    <li>
+      Llamar Personaje por id:
+      <br>
+      <code>
+        GET http://localhost:8080/character/{ID}
+      </code>
+    </li>
+    <br>
+    <li>
+      Editar Personaje:
+      <br>
+      <code>
+        PUT http://localhost:8080/character/update/{ID}
+        <br>
+        body: {
+          "name": "Fingolfin",
+          "titles": ["High King of the Noldor", "King of Hithlum"],
+          "birth": "Year of Trees 1190",
+          "death": "First Age 456",
+          "hair": "Dark",
+        } 
+      </code>
+    </li>
+    <br>
+    <li>
+      Eliminar Personaje:
+      <br>
+      <code>
+        DELETE http://localhost:8080/character/delete/{ID}
+      </code>
+    </li>
+  </ul>
+    
+  
+</body>
+
+</html>
