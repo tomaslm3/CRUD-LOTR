@@ -26,5 +26,5 @@ Despues de clonar el repositorio.
 - Ejecutar el proyecto con el comando:
     npm start 
 
-Se va abrira el navegador predeterminado con la documentacion de la base de datos. Muchas gracias.
+Se abrira el navegador predeterminado con la documentacion de la base de datos. Muchas gracias.
 
